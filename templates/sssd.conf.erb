@@ -6,13 +6,12 @@ domains = LDAP
 
 [domain/LDAP]
 id_provider = ldap
+enumerate = true
 auth_provider = ldap
 ldap_tls_reqcert = never
 ldap_id_use_start_tls = False
 chpass_provider = ldap
 cache_credentials = True
 ldap_uri = <%= @uris_comma %>
-ldap_search_base = <%= @base_dn %>
-ldap_access_filter = (&(objectclass=shadowaccount)(objectclass=posixaccount))
+ldap_user_search_base = <%= @base_dn %>
 ldap_schema = rfc2307
-
